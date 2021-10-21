@@ -10,7 +10,7 @@ pwm.start(100)
 
 try:
   while True:
-    for dc in range(100, -1, step=-1):
+    for dc in range(100, -1, -1):
       pwm.ChangeDutyCycle(dc)
       print(dc)
       time.sleep(2/100)
