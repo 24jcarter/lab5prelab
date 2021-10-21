@@ -9,11 +9,10 @@ pwm = GPIO.PWM(pwmPin, 100)
 pwm.start(100)
 
 try:
-  while True:
-    for dc in range(100, -1, -1):
-      pwm.ChangeDutyCycle(dc)
-      print(dc)
-      time.sleep(2/100)
+  for dc in range(100, -1, -1):
+    pwm.ChangeDutyCycle(dc)
+    print(dc)
+    time.sleep(2/100)
 except KeyboardInterrupt:
   print("closing")
 GPIO.cleanup()
