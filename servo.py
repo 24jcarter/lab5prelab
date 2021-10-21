@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BCM)
-pwmPin = 24
+pwmPin = 4
 GPIO.setup(pwmPin, GPIO.OUT)
 
 # set min & max % duty cycles (5 and 10 are default values, but play
@@ -15,7 +15,7 @@ pwm.start(0)
 
 try:
   while True:
-    for dc in range(dcMin,dcMax):
+    for dc in range(dcMin, dcMax+1):
       pwm.ChangeDutyCycle(dc)
       print(dc)
       time.sleep(0.5)
